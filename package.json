@@ -16,18 +16,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Signati/signati-core.git"
+    "url": "git+https://github.com/Signati/signati-sdk-node.git"
   },
   "keywords": [
     "Signati",
-    "signati-sdk-node"
+    "signati-sdk-node",
+    "CFDI",
+    "timbres",
+    "sat"
   ],
   "author": "signatidev@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Signati/signati-core/issues"
+    "url": "https://github.com/Signati/signati-sdk-node/issues"
   },
-  "homepage": "https://github.com/Signati/signati-core#readme",
+  "homepage": "https://github.com/Signati/signati-sdk-node#readme",
   "devDependencies": {
     "@types/jest": "^24.0.19",
     "jest": "^24.9.0",

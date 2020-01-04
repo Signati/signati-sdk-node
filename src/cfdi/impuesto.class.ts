@@ -1,11 +1,14 @@
-import {ImpuestoCfdi, TrasladosRetencion} from '../interfaces/impuesto.interface';
+import {ImpuestoCfdi, ImpuestoCfdiAttributes, TrasladosRetencion} from '../interfaces/impuesto.interface';
 
 export class Impuesto {
     private impuesto: ImpuestoCfdi = {} as ImpuestoCfdi;
 
-    constructor(impuesto: { totalRetenidos: string, totalTrasladados: string; }) {
-        this.impuesto.totalImpuestosRetenidos = impuesto.totalRetenidos;
-        this.impuesto.totalImpuestosRetenidos = impuesto.totalTrasladados;
+
+    constructor(impuesto: ImpuestoCfdiAttributes = {} as ImpuestoCfdiAttributes) {
+        if (impuesto.totalImpuestosRetenidos)
+            this.impuesto.totalImpuestosRetenidos = impuesto.totalImpuestosRetenidos;
+        if (impuesto.totalImpuestosTrasladados)
+            this.impuesto.totalImpuestosTrasladados = impuesto.totalImpuestosTrasladados;
     }
 
     public async addTraslados(translados: TrasladosRetencion[]) {

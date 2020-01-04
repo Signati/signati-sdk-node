@@ -6,6 +6,7 @@ import {EmisorCfdi} from '../interfaces/emisor.interface';
 import {ReceptorCfdi} from '../interfaces/receptor.interface';
 import {RelacionadoCfdi} from '../interfaces/relacionado.interface';
 import {Impuesto} from './impuesto.class';
+import {Concepto} from './concepto.class';
 
 export class CfdiClass {
     private cfdi: CfdiXml = {} as CfdiXml;
@@ -30,11 +31,17 @@ export class CfdiClass {
         return this;
     }
 
+    public concepto(concept: Concepto) {
+        this.cfdi.conceptos.push(concept.getConcept());
+        return this
+    }
 
     public async impuesto(impuesto: Impuesto) {
         this.cfdi.impuestos = impuesto.getImpuestos();
         return this;
     }
 
-
+    public getCfdi(): CfdiXml {
+        return this.cfdi;
+    }
 }

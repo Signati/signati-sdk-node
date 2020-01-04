@@ -1,3 +1,7 @@
+export interface ImpuestoCfdiAttributes {
+    totalImpuestosRetenidos: string;
+    totalImpuestosTrasladados: string;
+}
 export interface ImpuestoCfdi {
     totalImpuestosRetenidos: string;
     totalImpuestosTrasladados: string;

@@ -1,11 +1,11 @@
 export interface ImpuestoCfdi {
     totalImpuestosRetenidos: string;
     totalImpuestosTrasladados: string;
-    traslados: trasladosRetencion[]
-    retenciones: trasladosRetencion[]
+    traslados: TrasladosRetencion[]
+    retenciones: TrasladosRetencion[]
 }
 
-export interface trasladosRetencion {
+export interface TrasladosRetencion {
     Base?: string;
     Impuesto: string;
     TipoFactor: string;

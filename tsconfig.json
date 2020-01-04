@@ -11,6 +11,7 @@
     "experimentalDecorators": true,
     "target": "es2018",
     "outDir": "./lib",
+    "baseUrl": "./lib",
     "strict": true,
     "sourceMap": true,
     "allowJs": false,
@@ -26,9 +27,6 @@
     "src"
   ],
   "exclude": ["node_modules","lib", "**/__tests__/*"],
-  "references": [
-    {"path": "crud"},
-    {"path": "util" }
-  ]
+  "references": []
 }
 

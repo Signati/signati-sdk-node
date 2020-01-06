@@ -15,28 +15,31 @@ export class CfdiClass {
         this.cfdi.datos = data;
     }
 
-    public  relacion(relation: RelacionadoCfdi) {
+    public relacion(relation: RelacionadoCfdi) {
         const rel = new Relacionado(relation.TipoRelacion);
         rel.addRelationUuid(relation.UUID);
         this.cfdi.relacionado = rel.getRelation();
     }
 
-    public  emisor(emisor: EmisorCfdi) {
+    public emisor(emisor: EmisorCfdi) {
         this.cfdi.emisor = new Emisor(emisor).getEmisor();
         return this;
     }
 
-    public  receptor(receptor: ReceptorCfdi) {
+    public receptor(receptor: ReceptorCfdi) {
         this.cfdi.receptor = new Receptor(receptor).getReceptor();
         return this;
     }
 
     public concepto(concept: Concepto) {
+        if (!this.cfdi.conceptos) {
+            this.cfdi.conceptos = []
+        }
         this.cfdi.conceptos.push(concept.getConcept());
         return this
     }
 
-    public  impuesto(impuesto: Impuesto) {
+    public impuesto(impuesto: Impuesto) {
         this.cfdi.impuestos = impuesto.getImpuestos();
         return this;
     }

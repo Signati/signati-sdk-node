@@ -44,7 +44,8 @@ export class Concepto {
     public traslado(traslado: TrasladosRetencion) {
 
         if (!this.concept.Impuestos) {
-            this.concept.Impuestos = {} as ImpuestoCfdi
+            this.concept.Impuestos = {} as ImpuestoCfdi;
+            this.concept.Impuestos.traslados = [];
         }
         this.concept.Impuestos.traslados.push(traslado)
         return this;
@@ -61,6 +62,7 @@ export class Concepto {
     public retencion(retencion: TrasladosRetencion) {
         if (!this.concept.Impuestos) {
             this.concept.Impuestos = {} as ImpuestoCfdi
+            this.concept.Impuestos.retenciones = [];
         }
 
         this.concept.Impuestos.retenciones.push(retencion)

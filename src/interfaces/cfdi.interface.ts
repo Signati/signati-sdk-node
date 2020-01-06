@@ -18,12 +18,12 @@ export interface DatosCfdi {
     // Version?: string;
     Serie: string;
     Folio: string;
-    Fecha: string;
+    // Fecha: string;
     // Sello: string;
     FormaPago: string;
     // NoCertificado: string;
     // Certificado: string;
-    condicionesDePago: string;
+    condicionesDePago ?: string;
     SubTotal: string;
     Descuento: string;
     Moneda: string;

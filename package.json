@@ -1,18 +1,15 @@
 {
-  "name": "signati-sdk-node",
-  "version": "1.0.0",
+  "name": "@signati/signati-sdk-node",
+  "version": "0.0.2",
   "description": "sdk for node js ",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "jest --config jestconfig.json",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
     "prepare": "npm run build",
-    "version": "git add -A src",
-    "postversion": "git push && git push --tags",
-    "build": "tsc",
-    "lint": "tslint -p tsconfig.json"
+    "build": "tsc"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -47,5 +44,5 @@
   ],
   "dependencies": {
     "immutable": "^4.0.0-rc.12"
-   }
+  }
 }

@@ -18,7 +18,7 @@
     "skipLibCheck": false,
     "composite": true,
     "paths": {
-      "@signati/signati-sdk-node": [
+      "@signatidev/signati-sdk-node": [
         "src"
       ]
     }

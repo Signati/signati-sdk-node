@@ -162,7 +162,7 @@
         "signature": "271314ea5115f6aec6d09a18c005cceab9c0800a7224450bc7228faf45a771c8"
       },
       "./src/cfdi/concepto.class.ts": {
-        "version": "268d889e38229507347881c6bed55d2b9b48ff685e0fbd639abc3ff76584bad1",
+        "version": "0be7ea3beff620e89615f8a2db8fc6aab767436b04d48115c9b218a27d761468",
         "signature": "57297deb2fdabeb40e6a331ad917b0f8863f5f4539a27517d80e70be440a1d86"
       },
       "./src/cfdi/cfdi.class.ts": {
@@ -469,7 +469,7 @@
       "./src/cfdi/receptor.class.ts",
       "./src/cfdi/relacionado.class.ts",
       "./src/cfdi/impuesto.class.ts",
-      "./src/cfdi/concepto.class.ts",
+      "./src/cfdi/cfdi.class.ts",
       "./src/index.ts",
       "./src/cfdi/complementos.class.ts",
       "./src/interfaces/complementos.interface.ts",
@@ -489,7 +489,7 @@
       "./node_modules/@types/stack-utils/index.d.ts",
       "./node_modules/@types/yargs-parser/index.d.ts",
       "./node_modules/@types/yargs/index.d.ts",
-      "./src/cfdi/cfdi.class.ts"
+      "./src/cfdi/concepto.class.ts"
     ]
   },
   "version": "3.7.4"

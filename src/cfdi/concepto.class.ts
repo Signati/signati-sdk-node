@@ -41,13 +41,15 @@ export class Concepto {
      * @param {String} traslado.TasaOCuota
      * @param {String} traslado.Importe
      */
-    public traslado(traslado: TrasladosRetencion) {
+    public traslado(transfer: TrasladosRetencion) {
 
         if (!this.concept.Impuestos) {
             this.concept.Impuestos = {} as ImpuestoCfdi;
+        }
+        if (!this.concept.Impuestos.traslados) {
             this.concept.Impuestos.traslados = [];
         }
-        this.concept.Impuestos.traslados.push(traslado)
+        this.concept.Impuestos.traslados.push(transfer)
         return this;
     }
 
@@ -59,13 +61,15 @@ export class Concepto {
      * @param {String} retencion.TasaOCuota
      * @param {String} retencion.Importe
      */
-    public retencion(retencion: TrasladosRetencion) {
+    public retencion(retention: TrasladosRetencion) {
         if (!this.concept.Impuestos) {
             this.concept.Impuestos = {} as ImpuestoCfdi
+        }
+        if (!this.concept.Impuestos.retenciones) {
             this.concept.Impuestos.retenciones = [];
         }
 
-        this.concept.Impuestos.retenciones.push(retencion)
+        this.concept.Impuestos.retenciones.push(retention)
         return this;
     }
 

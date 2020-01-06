@@ -30,7 +30,7 @@ export class Concepto {
      * @param {String} concepto.Impuestos.Retenciones.Importe
      */
     constructor(concept: ConceptProperty) {
-        this.concept = Object.assign({}, concept);
+        this.concept = concept
     }
 
     /**

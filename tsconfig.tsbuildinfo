@@ -142,8 +142,8 @@
         "signature": "2d2b3501e8cc0a9601068a2df3cf76299178ce67a4a428959e0b7a3b38291823"
       },
       "./src/interfaces/cfdi.interface.ts": {
-        "version": "5f79dd7c51ec222a3819c7a68ae82c60ec94f1c39bb7b36d7e09578d52f424bb",
-        "signature": "0c358fb31554d1dba6fc26c96c78457a3d39449689de8cc9d4b52add7f9f50cb"
+        "version": "b6a0a138b40397a92ae2ed7be37f76cee148718b23f3089f2ec9c479b99eac67",
+        "signature": "c9d3fb010355e48ee8842915ca8dd92a8d783956c6c624504fa928efc8e87054"
       },
       "./src/cfdi/emisor.class.ts": {
         "version": "b6798f58ceca4b67b1f4edf98d37a45cf1e0f3c6f25c7f2aef46f17e2b71d1ff",
@@ -359,8 +359,8 @@
         "./src/interfaces/relacionado.interface.ts",
         "./src/interfaces/emisor.interface.ts",
         "./src/interfaces/receptor.interface.ts",
-        "./src/interfaces/impuesto.interface.ts",
-        "./src/interfaces/concepto.interface.ts"
+        "./src/interfaces/concepto.interface.ts",
+        "./src/interfaces/impuesto.interface.ts"
       ],
       "./src/cfdi/emisor.class.ts": [
         "./src/interfaces/emisor.interface.ts"
@@ -464,11 +464,11 @@
       "./src/interfaces/receptor.interface.ts",
       "./src/interfaces/impuesto.interface.ts",
       "./src/interfaces/concepto.interface.ts",
-      "./src/interfaces/cfdi.interface.ts",
       "./src/cfdi/emisor.class.ts",
       "./src/cfdi/receptor.class.ts",
       "./src/cfdi/relacionado.class.ts",
       "./src/cfdi/impuesto.class.ts",
+      "./src/cfdi/concepto.class.ts",
       "./src/cfdi/complementos.class.ts",
       "./src/interfaces/complementos.interface.ts",
       "./node_modules/@babel/types/lib/index.d.ts",
@@ -487,9 +487,9 @@
       "./node_modules/@types/stack-utils/index.d.ts",
       "./node_modules/@types/yargs-parser/index.d.ts",
       "./node_modules/@types/yargs/index.d.ts",
-      "./src/cfdi/concepto.class.ts",
-      "./src/index.ts",
-      "./src/cfdi/cfdi.class.ts"
+      "./src/interfaces/cfdi.interface.ts",
+      "./src/cfdi/cfdi.class.ts",
+      "./src/index.ts"
     ]
   },
   "version": "3.7.4"

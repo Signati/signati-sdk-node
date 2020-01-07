@@ -23,7 +23,7 @@ export interface DatosCfdi {
     FormaPago: string;
     // NoCertificado: string;
     // Certificado: string;
-    condicionesDePago ?: string;
+    CondicionesDePago ?: string;
     SubTotal: string;
     Descuento: string;
     Moneda: string;

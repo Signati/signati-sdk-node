@@ -138,8 +138,8 @@
         "signature": "275db0741de2e701a133fa7bb8dc694ea6cb41063e4bbc552cebd3c8f7975d65"
       },
       "./src/interfaces/concepto.interface.ts": {
-        "version": "db81ea4eab09114ea0e99fd7be6a94324cd359547d50f5338151cb0ba20818bf",
-        "signature": "075c14c2442d701d4f7543deff4de33f73ab5d0ce96ade1bf465560aac98393f"
+        "version": "db4085982163695696df745039210f6bd80356ae0dfd65007a1cdcdf15702a69",
+        "signature": "3edeffb1caa6ed8093cf9f98dabcc73ee5fef0cfc5cff80964c682583e5d6023"
       },
       "./src/interfaces/cfdi.interface.ts": {
         "version": "b6a0a138b40397a92ae2ed7be37f76cee148718b23f3089f2ec9c479b99eac67",

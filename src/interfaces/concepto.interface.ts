@@ -9,7 +9,7 @@ export interface ConceptoCfdi {
     Descripcion: string;
     ValorUnitario: number | string;
     Importe: number | string;
-    Descuento: number | string;
+    Descuento?: number | string;
     Impuestos?: ImpuestoCfdi
     ComplementoConcepto?: any
 }

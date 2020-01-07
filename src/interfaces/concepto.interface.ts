@@ -23,5 +23,5 @@ export interface ConceptProperty {
     Descripcion: string;
     ValorUnitario: number | string;
     Importe: number | string;
-    Descuento: number | string;
+    Descuento?: number | string;
 }

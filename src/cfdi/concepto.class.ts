@@ -1,46 +1,16 @@
 import {ConceptoCfdi, ConceptProperty} from '../interfaces/concepto.interface';
 import {ImpuestoCfdi, TrasladosRetencion} from '../interfaces/impuesto.interface';
+import { mul ,round} from 'exact-math'
 
 export class Concepto {
     private concept: ConceptoCfdi = {} as ConceptoCfdi;
 
-    /**
-     * @param {Object} concepto
-     * @param {String} concepto.ClaveProdServ
-     * @param {String} concepto.ClaveUnidad
-     * @param {String} concepto.NoIdentificacion
-     * @param {String} concepto.Cantidad
-     * @param {String} concepto.Unidad
-     * @param {String} concepto.Descripcion
-     * @param {String} concepto.ValorUnitario
-     * @param {String} concepto.Importe
-     * @param {String} concepto.Descuento
-     * @param {Object} concepto.Impuestos
-     * @param {Object[]} concepto.Impuestos.Traslados
-     * @param {Object[]} concepto.Impuestos.Retenciones
-     * @param {String} concepto.Impuestos.Traslados.Base
-     * @param {String} concepto.Impuestos.Traslados.Impuesto
-     * @param {String} concepto.Impuestos.Traslados.TipoFactor
-     * @param {String} concepto.Impuestos.Traslados.TasaOCuota
-     * @param {String} concepto.Impuestos.Traslados.Importe
-     * @param {String} concepto.Impuestos.Retenciones.Base
-     * @param {String} concepto.Impuestos.Retenciones.Impuesto
-     * @param {String} concepto.Impuestos.Retenciones.TipoFactor
-     * @param {String} concepto.Impuestos.Retenciones.TasaOCuota
-     * @param {String} concepto.Impuestos.Retenciones.Importe
-     */
+
     constructor(concept: ConceptProperty) {
         this.concept = concept
     }
 
-    /**
-     * @param {Object} traslado
-     * @param {String} traslado.Base
-     * @param {String} traslado.Impuesto
-     * @param {String} traslado.TipoFactor
-     * @param {String} traslado.TasaOCuota
-     * @param {String} traslado.Importe
-     */
+
     public traslado(transfer: TrasladosRetencion) {
 
         if (!this.concept.Impuestos) {
@@ -49,18 +19,10 @@ export class Concepto {
         if (!this.concept.Impuestos.traslados) {
             this.concept.Impuestos.traslados = [];
         }
-        this.concept.Impuestos.traslados.push(transfer)
+        this.concept.Impuestos.traslados.push(transfer);
         return this;
     }
 
-    /**
-     * @param {Object} retencion
-     * @param {String} retencion.Base
-     * @param {String} retencion.Impuesto
-     * @param {String} retencion.TipoFactor
-     * @param {String} retencion.TasaOCuota
-     * @param {String} retencion.Importe
-     */
     public retencion(retention: TrasladosRetencion) {
         if (!this.concept.Impuestos) {
             this.concept.Impuestos = {} as ImpuestoCfdi
@@ -71,6 +33,45 @@ export class Concepto {
 
         this.concept.Impuestos.retenciones.push(retention)
         return this;
+    }
+
+    validate() {
+        let state = {
+            isFail: false,
+            errors: [] as any[]
+        };
+
+        if (
+            !(round(
+                mul(
+                    this.concept.Cantidad,
+                    this.concept.ValorUnitario,
+                    { returnString: true}
+                    ), -2, { returnString: true, trim: false }) === this.concept.Importe)) {
+            state.errors.push({ message: 'La cantidad del concepto * ValorUnitario no coincide con el importe', payload: this.concept })
+            state.isFail = true
+        }
+
+        if (this.concept.Impuestos){
+
+            for (const traslado of this.concept.Impuestos.traslados){
+                if (!traslado.Importe === round(mul(traslado.Base, traslado.TasaOCuota, { returnString: true }), -2, { returnString: true, trim: false })){
+                    if (!state.isFail) { state.isFail = true}
+                    state.errors.push({
+                        message: 'Un traslado no coincide en la operación de Base * TasaOCuota === Importe ',
+                        payload: traslado
+                    })
+                }
+
+            }
+        } else {
+            state.isFail = true;
+            state.errors.push({
+                message: 'No existe Impuestos en el concepto',
+                payload: this.concept
+            })
+        }
+        return state;
     }
 
     getConcept(): ConceptoCfdi {

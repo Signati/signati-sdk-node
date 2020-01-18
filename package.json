@@ -1,6 +1,6 @@
 {
-  "name": "@signati/signati-sdk-node",
-  "version": "0.0.13",
+  "name": "@signati/sdk-node",
+  "version": "0.0.1",
   "description": "sdk for node js ",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

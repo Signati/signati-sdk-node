@@ -12,20 +12,24 @@ export class Impuesto {
             this.impuesto.totalImpuestosTrasladados = impuesto.totalImpuestosTrasladados;
     }
 
-    public async addTraslados(translados: TrasladosRetencion[]) {
+    public async traslados(translados: TrasladosRetencion[]) {
         this.impuesto.traslados = translados;
         return this;
     }
 
-    public async addRetenciones(retenciones: TrasladosRetencion[]) {
+    public async retenciones(retenciones: TrasladosRetencion[]) {
         this.impuesto.retenciones = retenciones;
         return this;
     }
+
     validate() {
         const total = this.impuesto.traslados.reduce((previousValue, currentValue) => {
-            return round(add(previousValue, currentValue.Importe, { returnString: true}), -2, { returnString: true, trim: false });
+            return round(add(previousValue, currentValue.Importe, {returnString: true}), -2, {
+                returnString: true,
+                trim: false
+            });
         }, '0.00');
-        return round(this.impuesto.totalImpuestosTrasladados, -2, { returnString: true, trim: false }) === total
+        return round(this.impuesto.totalImpuestosTrasladados, -2, {returnString: true, trim: false}) === total
     }
 
 

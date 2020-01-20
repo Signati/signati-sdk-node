@@ -59,13 +59,14 @@ export default class CFDI {
                 ?? '0.00', true), -2, {returnString: true, trim: false}), '0.00');
         return round(add(subtotal, totalImpuestos, {returnString: true}), -2, {returnString: true, trim: false})
     }
+
     validateAll() {
         const state = {
             isFail: false,
             errors: [] as any[],
         };
 
-        const differenceSubTotal = sub(this.cfdi.datos.SubTotal, this.getSubtotal(), { returnString: false });
+        const differenceSubTotal = sub(this.cfdi.datos.SubTotal, this.getSubtotal(), {returnString: false});
         if (differenceSubTotal) {
             state.errors.push({
                 message: 'El SubTotal del CFDI no coincide con el Importe de conceptos.',
@@ -73,7 +74,7 @@ export default class CFDI {
             })
         }
 
-        const differenceTotal = sub(this.cfdi.datos.Total, this.getTotal(), { returnString: false });
+        const differenceTotal = sub(this.cfdi.datos.Total, this.getTotal(), {returnString: false});
         if (differenceTotal) {
             state.errors.push({
                 message: 'El Total del CFDI no coincide con el Total de conceptos e impuestos.',
@@ -84,6 +85,8 @@ export default class CFDI {
     }
 
     public getCfdi(): CfdiXml {
-        return this.cfdi;
+        const cfdiObject = {...this.cfdi};
+        this.cfdi = {} as CfdiXml;
+        return cfdiObject
     }
 }

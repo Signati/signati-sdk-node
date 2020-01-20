@@ -1,12 +1,11 @@
-import {ConceptoCfdi, ConceptProperty} from '../interfaces/concepto.interface';
+import {ConceptoCfdi, Concept} from '../interfaces/concepto.interface';
 import {ImpuestoCfdi, TrasladosRetencion} from '../interfaces/impuesto.interface';
 import {mul, round, sub} from 'exact-math'
 
 export class Concepto {
     private concept: ConceptoCfdi = {} as ConceptoCfdi;
 
-
-    constructor(concept: ConceptProperty) {
+    constructor(concept: Concept) {
         this.concept = concept
     }
 
@@ -101,7 +100,9 @@ export class Concepto {
     }
 
     getConcept(): ConceptoCfdi {
-        return this.concept;
+        const concepto = {...this.concept};
+        this.concept = {} as ConceptoCfdi;
+        return concepto;
         // pushConcepto(cfdi.jxml, this.concepto);
     }
 }

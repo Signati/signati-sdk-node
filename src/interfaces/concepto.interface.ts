@@ -1,20 +1,11 @@
 import {ImpuestoCfdi} from './impuesto.interface';
 
-export interface ConceptoCfdi {
-    ClaveProdServ: string;
-    NoIdentificacion: string;
-    Cantidad: number | string;
-    ClaveUnidad: string;
-    Unidad: string;
-    Descripcion: string;
-    ValorUnitario: number | string;
-    Importe: number | string;
-    Descuento?: number | string;
+export interface ConceptoCfdi extends Concept {
     Impuestos?: ImpuestoCfdi
     ComplementoConcepto?: any
 }
 
-export interface ConceptProperty {
+export interface Concept {
     ClaveProdServ: string;
     NoIdentificacion: string;
     Cantidad: number | string;

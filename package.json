@@ -1,6 +1,6 @@
 {
   "name": "@signati/sdk-node",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "sdk for node js ",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -23,10 +23,7 @@
   },
   "keywords": [
     "Signati",
-    "signati-sdk-node",
-    "CFDI",
-    "timbres",
-    "sat"
+    "signati-sdk-node"
   ],
   "author": "signatidev@gmail.com",
   "license": "ISC",

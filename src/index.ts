@@ -1,4 +1,7 @@
-export {default as CfdiClass} from './cfdi/cfdi.class';
-export { default as CFDI } from './CFDI';
+export * from './cfdi/cfdi.class';
 export * from './cfdi/concepto.class';
 export * from './cfdi/impuesto.class';
+export * from './cfdi/emisor.class';
+export * from './cfdi/receptor.class';
+export * from './cfdi/relacionado.class';
+export * from './cfdi/complementos.class';

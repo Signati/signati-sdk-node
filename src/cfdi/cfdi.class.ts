@@ -9,7 +9,7 @@ import {Impuesto} from './impuesto.class';
 import {Concepto} from './concepto.class';
 import {add, sub, round} from 'exact-math';
 
-export default class CFDI {
+export class CFDI {
     private cfdi: CfdiXml = {} as CfdiXml;
 
     constructor(data?: DatosCfdi) {

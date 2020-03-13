@@ -1,3 +1,3 @@
-class ComplementosClass {
-    
+export class ComplementosClass {
+
 }

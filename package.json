@@ -47,6 +47,7 @@
     "lib/**/*"
   ],
   "dependencies": {
+    "axios": "^0.19.2",
     "exact-math": "^2.1.2",
     "immutable": "^4.0.0-rc.12",
     "yup": "^0.28.0"

@@ -12,8 +12,8 @@ import {add, sub, round} from 'exact-math';
 export class CFDI {
     private cfdi: CfdiXml = {} as CfdiXml;
 
-    constructor(data?: DatosCfdi) {
-        this.cfdi.datos = data as any;
+    constructor(data: DatosCfdi) {
+        this.cfdi.datos = data ;
     }
 
     public relacion(relation: RelacionadoCfdi) {
